@@ -53,7 +53,7 @@ _these demonstrations use the GadgetFactory Papilio Duo with LogicStart, GadgetF
 [27488.670874] usb 3-1: Endpoint 2 MaxPacketSize 512
 [27488.670878] usb 3-1: Setting MaxPacketSize 512
 [27488.671173] usb 3-1: FTDI USB Serial Device converter now attached to ttyUSB1
-<pre><code>
+</pre></code>
 If it's not appearing, try rebooting and reloading the FTDI drivers with `modprobe --first-time ftdi_sio`.  Writing the Papilio Duo device ID to the `new_id` file with `/bin/sh -c 'echo 0403 7bc0 > /sys/bus/usb-serial/drivers/ftdi_sio/new_id` may help too; it doesn't hurt, though I haven't analyzed whether it's required (will update soon!).
 
 0. `cd /opt/papilio/papilio-loader-repo/papilio-prog && make clean && ./autogen && ./configure && make && cp papilio-prog /opt/papilio/papilio-loader/programmer/linux32/ && chmod -R u+x /opt/papilio/papilio-loader/programmer/linux32/`

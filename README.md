@@ -45,15 +45,15 @@ _these demonstrations use the GadgetFactory Papilio Duo with LogicStart, GadgetF
 0. `sudo /opt/papilio/designlab/ubuntu-setup.sh` — Run the DesignLab install script.  We don't need the DesignLab IDE to write the bitfile to the FPGA, but the DesignLab installer sets some device access rules and installs drivers for the FTDI USB-to-serial interface that we need to use Papilio Loader.
 
 0.  Connect the Papilio Duo to your computer using a mini-USB cable as described in the [DsignLab QuickStart](http://gadgetfactory.net/learn/2015/01/14/designlab-quickstart-duo-fpga/).  Run `lsusb` and it should appear as `ID 0403:7bc0 Future Technology Devices International, Ltd`.  Run dmesg, and if your FTDI drivers installed correctly, you should see something like this:
-
-> [27488.670773] ftdi_sio 3-1:1.1: FTDI USB Serial Device converter detected
-> [27488.670858] usb 3-1: Detected FT2232H
-> [27488.670863] usb 3-1: Number of endpoints 2
-> [27488.670869] usb 3-1: Endpoint 1 MaxPacketSize 512
-> [27488.670874] usb 3-1: Endpoint 2 MaxPacketSize 512
-> [27488.670878] usb 3-1: Setting MaxPacketSize 512
-> [27488.671173] usb 3-1: FTDI USB Serial Device converter now attached to ttyUSB1
-
+<pre><code>
+[27488.670773] ftdi_sio 3-1:1.1: FTDI USB Serial Device converter detected
+[27488.670858] usb 3-1: Detected FT2232H
+[27488.670863] usb 3-1: Number of endpoints 2
+[27488.670869] usb 3-1: Endpoint 1 MaxPacketSize 512
+[27488.670874] usb 3-1: Endpoint 2 MaxPacketSize 512
+[27488.670878] usb 3-1: Setting MaxPacketSize 512
+[27488.671173] usb 3-1: FTDI USB Serial Device converter now attached to ttyUSB1
+<pre><code>
 If it's not appearing, try rebooting and reloading the FTDI drivers with `modprobe --first-time ftdi_sio`.  Writing the Papilio Duo device ID to the `new_id` file with `/bin/sh -c 'echo 0403 7bc0 > /sys/bus/usb-serial/drivers/ftdi_sio/new_id` may help too; it doesn't hurt, though I haven't analyzed whether it's required (will update soon!).
 
 0. `cd /opt/papilio/papilio-loader-repo/papilio-prog && make clean && ./autogen && ./configure && make && cp papilio-prog /opt/papilio/papilio-loader/programmer/linux32/ && chmod -R u+x /opt/papilio/papilio-loader/programmer/linux32/`

@@ -1,0 +1,25 @@
+xst -intstyle ise -ifn "/mnt/RAID-ONE/BC/fpga/Switches_LEDs/Switches_LEDs.xst" -ofn "/mnt/RAID-ONE/BC/fpga/Switches_LEDs/Switches_LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-tqg144-2 Switches_LEDs.ngc Switches_LEDs.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Switches_LEDs_map.ncd Switches_LEDs.ngd Switches_LEDs.pcf 
+par -w -intstyle ise -ol high -mt off Switches_LEDs_map.ncd Switches_LEDs.ncd Switches_LEDs.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Switches_LEDs.twx Switches_LEDs.ncd -o Switches_LEDs.twr Switches_LEDs.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-tqg144-2 Switches_LEDs.ngc Switches_LEDs.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Switches_LEDs_map.ncd Switches_LEDs.ngd Switches_LEDs.pcf 
+par -w -intstyle ise -ol high -mt off Switches_LEDs_map.ncd Switches_LEDs.ncd Switches_LEDs.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Switches_LEDs.twx Switches_LEDs.ncd -o Switches_LEDs.twr Switches_LEDs.pcf 
+bitgen -intstyle ise -f Switches_LEDs.ut Switches_LEDs.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc constraints.ucf -p xc6slx9-tqg144-2 Switches_LEDs.ngc Switches_LEDs.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Switches_LEDs_map.ncd Switches_LEDs.ngd Switches_LEDs.pcf 
+par -w -intstyle ise -ol high -mt off Switches_LEDs_map.ncd Switches_LEDs.ncd Switches_LEDs.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Switches_LEDs.twx Switches_LEDs.ncd -o Switches_LEDs.twr Switches_LEDs.pcf -ucf constraints.ucf 
+bitgen -intstyle ise -f Switches_LEDs.ut Switches_LEDs.ncd 
+xst -intstyle ise -ifn "/mnt/RAID-ONE/BC/fpga/Switches_LEDs/Switches_LEDs.xst" -ofn "/mnt/RAID-ONE/BC/fpga/Switches_LEDs/Switches_LEDs.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc constraints.ucf -p xc6slx9-tqg144-2 Switches_LEDs.ngc Switches_LEDs.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Switches_LEDs_map.ncd Switches_LEDs.ngd Switches_LEDs.pcf 
+par -w -intstyle ise -ol high -mt off Switches_LEDs_map.ncd Switches_LEDs.ncd Switches_LEDs.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Switches_LEDs.twx Switches_LEDs.ncd -o Switches_LEDs.twr Switches_LEDs.pcf -ucf constraints.ucf 
+bitgen -intstyle ise -f Switches_LEDs.ut Switches_LEDs.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc constraints.ucf -p xc6slx9-tqg144-2 Switches_LEDs.ngc Switches_LEDs.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Switches_LEDs_map.ncd Switches_LEDs.ngd Switches_LEDs.pcf 
+par -w -intstyle ise -ol high -mt off Switches_LEDs_map.ncd Switches_LEDs.ncd Switches_LEDs.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Switches_LEDs.twx Switches_LEDs.ncd -o Switches_LEDs.twr Switches_LEDs.pcf -ucf constraints.ucf 

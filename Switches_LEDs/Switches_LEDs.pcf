@@ -1,0 +1,23 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon May 09 08:31:34 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "switch_0" LOCATE = SITE "P116" LEVEL 1;
+COMP "switch_1" LOCATE = SITE "P117" LEVEL 1;
+COMP "switch_2" LOCATE = SITE "P118" LEVEL 1;
+COMP "switch_3" LOCATE = SITE "P119" LEVEL 1;
+COMP "switch_4" LOCATE = SITE "P120" LEVEL 1;
+COMP "switch_5" LOCATE = SITE "P62" LEVEL 1;
+COMP "switch_6" LOCATE = SITE "P59" LEVEL 1;
+COMP "switch_7" LOCATE = SITE "P57" LEVEL 1;
+COMP "LED_0" LOCATE = SITE "P55" LEVEL 1;
+COMP "LED_1" LOCATE = SITE "P50" LEVEL 1;
+COMP "LED_2" LOCATE = SITE "P47" LEVEL 1;
+COMP "LED_3" LOCATE = SITE "P121" LEVEL 1;
+COMP "LED_4" LOCATE = SITE "P123" LEVEL 1;
+COMP "LED_5" LOCATE = SITE "P124" LEVEL 1;
+COMP "LED_6" LOCATE = SITE "P126" LEVEL 1;
+COMP "LED_7" LOCATE = SITE "P127" LEVEL 1;
+SCHEMATIC END;
+

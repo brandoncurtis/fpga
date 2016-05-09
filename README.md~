@@ -1,5 +1,7 @@
-# fpga
+# Field-Programmable Gate Arrays (FPGAs)
+_one non-computer scientist attempts to figure them out!_
+_these demonstrations use the GadgetFactory Papilio Duo with LogicStart, GadgetFactory DesignLab, Xilinx ISE 14.7, all running on Ubuntu 16.04 x64 LTS_
 
 ### File Structure
 
-**Constraints**
+**Constraints** contains the User Constraint File (.ucf) for each board.  The .ucf describes how the variables defined and used in the .vhd file are connected to the physical pins on the board.

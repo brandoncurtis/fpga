@@ -16,15 +16,13 @@ _these demonstrations use the GadgetFactory Papilio Duo with LogicStart, GadgetF
 
 0. `sudo chown -R <yourusername>: /opt/xilinx` — make sure you own everything in the installer folder.
 
-0. Download and unzip [Xilinx ISE](http://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools.html); for Ubuntu, you'll want the enormous (6.09 GB) 'Full Installer for Linux'.  [A torrent](https://thepiratebay.se/torrent/14572824) is also available.
+0. `tar -xvf ~/Downloads/Xilinx_ISE_DS_Lin_14.7_1015_1.tar -C /opt/xilinx/` — After downloading, unpack [Xilinx ISE](http://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools.html); for Ubuntu, you'll want the enormous (6.09 GB) 'Full Installer for Linux'.  [A torrent](https://thepiratebay.se/torrent/14572824) is also available.
 
 0. `cd /opt/xilinx/Xilinx_ISE_DS_Lin_14.7_1015_1` — enter the installer folder.
 
-0. `sudo ./xsetup` — run the installer. I installed to `/opt/xilinx`, so all of the ISE files live in `/opt/xilinx/14.7`.
+0. `sudo ./xsetup` — run the installer. I installed to `/opt/xilinx`, so all of the ISE files live in `/opt/xilinx/14.7`.  Choose 'ISE WebPACK' from the list of available options, and uncheck 'cable drivers' and 'license key'; we'll take care of them below.
 
 0. `sudo chown -R <yourusername>: /opt/xilinx` — once again, make sure you own everything in the installer folder.
-
-0. `nano /opt/xilinx/14.7/ISE_DS/settings64.sh` — this settings script sets some environmental variables in preparation for launching Xilinx ISE; make the changes highlighted as `### BC CHANGES` in the `settings64.sh` file included in this repo's `setup` folder.  I have NOT evaluated these changes in-depth.  They come from [this YouTube video](https://www.youtube.com/watch?v=hvD4j9x4rBM), and they appear to work!  If you're using a 32-bit system, you'd do all of this to `settings32.sh` instead.
 
 0. `source /opt/xilinx/14.7/ISE_DS/settings64.sh` — sourcing this script, which is basically equivalent to running it in the current shell. Note that we are [sourcing this script, not running it directly](http://superuser.com/questions/176783/what-is-the-difference-between-executing-a-bash-script-and-sourcing-a-bash-scrip), so there is no need to change its permissions to make it executable.
 
@@ -32,7 +30,7 @@ _these demonstrations use the GadgetFactory Papilio Duo with LogicStart, GadgetF
 
 0. `/opt/xilinx/14.7/ISE_DS/ISE/bin/lin64/ise` — restart the Xilinx ISE and verify that you no longer get the licensing error.
 
-0.  Open the [Intro to Spartan FPGA Book](https://github.com/hamsternz/IntroToSpartanFPGABook) and work through the initial Switches_LEDs example.  The GadgetFactory Papilio Duo contains the same Xilinx Spartan-6 FPGA as the Papilio Pro, so you'll select [the same FPGA settings](http://forum.gadgetfactory.net/index.php?/topic/2363-xlinx-ise-webtools-on-papilio-duo/) when setting up your FPGA sketch in ISE: `Spartan-6, device = XC6SLX9, package = TQG144, speed = 2`
+0.  Open the [Intro to Spartan FPGA Book](https://github.com/hamsternz/IntroToSpartanFPGABook) and work through the initial Switches_LEDs example.  The GadgetFactory Papilio Duo contains the same Xilinx Spartan-6 FPGA as the Papilio Pro, so you'll select [the same FPGA settings](http://forum.gadgetfactory.net/index.php?/topic/2363-xlinx-ise-webtools-on-papilio-duo/) when setting up your FPGA sketch in ISE: `Spartan-6, device = XC6SLX9, package = TQG144, speed = 2`.  The key file's you'll be creating are called 'constraints.ucf' and 'Switches_LEDs.vhd'; see my finished examples in the Switches_LEDs folder of this repo.
 
 0.  Work through the example until you have successfully generated the bitfile that will be written to the FPGA.
 
@@ -72,3 +70,12 @@ If it's not appearing, try rebooting and reloading the FTDI drivers with `modpro
 - [FPGAs; Lesson 2: Interconnecting VHDL modules; Top Level Design and much more](https://www.youtube.com/watch?v=uhxTgUSZvYE) - more advanced concepts with Nick Williams (2015-02)
 - [FPGA 101 - Making awesome stuff with FPGAs](https://www.youtube.com/watch?v=Er9luiBa32k)
 - [Lec-39 introduction to fpga](https://www.youtube.com/watch?v=CLUoWkJUnN0)
+
+### Update Log
+
+2016-06-15: after extensive installation and configuration testing in a clean Ubuntu 16.04 VM, removed this step from the installation guide:
+
+0. `nano /opt/xilinx/14.7/ISE_DS/settings64.sh` — this settings script sets some environmental variables in preparation for launching Xilinx ISE; make the changes highlighted as `### BC CHANGES` in the `settings64.sh` file included in this repo's `setup` folder.  I have NOT evaluated these changes in-depth.  They come from [this YouTube video](https://www.youtube.com/watch?v=hvD4j9x4rBM), and they appear to work!  If you're using a 32-bit system, you'd do all of this to `settings32.sh` instead.
+
+Added a BASH command for untaring the Xilinx ISE download.
+ 

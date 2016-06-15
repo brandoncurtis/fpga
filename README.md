@@ -73,9 +73,9 @@ If it's not appearing, try rebooting and reloading the FTDI drivers with `modpro
 
 ### Update Log
 
-2016-06-15: after extensive installation and configuration testing in a clean Ubuntu 16.04 VM, removed this step from the installation guide:
-
-0. `nano /opt/xilinx/14.7/ISE_DS/settings64.sh` — this settings script sets some environmental variables in preparation for launching Xilinx ISE; make the changes highlighted as `### BC CHANGES` in the `settings64.sh` file included in this repo's `setup` folder.  I have NOT evaluated these changes in-depth.  They come from [this YouTube video](https://www.youtube.com/watch?v=hvD4j9x4rBM), and they appear to work!  If you're using a 32-bit system, you'd do all of this to `settings32.sh` instead.
-
-Added a BASH command for untaring the Xilinx ISE download.
+2016-06-15
+- after extensive installation and configuration testing in a clean Ubuntu 16.04 VM, removed this step from the installation guide: <pre>0. `nano /opt/xilinx/14.7/ISE_DS/settings64.sh` — this settings script sets some environmental variables in preparation for launching Xilinx ISE; make the changes highlighted as `### BC CHANGES` in the `settings64.sh` file included in this repo's `setup` folder.  I have NOT evaluated these changes in-depth.  They come from [this YouTube video](https://www.youtube.com/watch?v=hvD4j9x4rBM), and they appear to work!  If you're using a 32-bit system, you'd do all of this to `settings32.sh` instead.</pre>
+- Added a BASH command for untaring the Xilinx ISE download.
+- Added additional description of what boxes to check when installing Xilinx ISE.
+- Added a decription of the key files produced in the Switches_LEDs example.
  
